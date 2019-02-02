@@ -2,8 +2,9 @@
     <string name="app_name">Uyir CBE</string>
     <string name="save">Save</string>
     <string name="hint_enter_name">Enter Name</string>
-    <string name="area">Area name</string>
-    <string name="pincode">Pin Code</string>
+    <string name="area">Enter Area name</string>
+    <string name="pincode">Enter Pin Code</string>
+    <string name="email">Email ID (Optional)</string>
     <string name="export">Export</string>
     <string name="export_exclude">Export with Exclude</string>
     <string name="title_activity_main">MainActivity</string>

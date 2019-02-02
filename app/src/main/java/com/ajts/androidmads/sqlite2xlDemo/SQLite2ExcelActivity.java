@@ -28,7 +28,8 @@ import java.util.List;
 
 public class SQLite2ExcelActivity extends AppCompatActivity {
 
-    EditText edtUser, edtContactNo;
+//    EditText edtUser, edtContactNo ;
+    EditText edtUser, edtContactNo, pincode, area, email;
     Button btnSaveUser, btnExport, btnExportExclude;
     ListView lvUsers;
     CustomAdapter lvUserAdapter;
@@ -54,7 +55,7 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validate(edtUser) && validate(edtContactNo)) {
+                if (validate(edtUser) && validate(edtContactNo) && validate(area) && validate(pincode)) {
                     dbQueries.open();
 
                     Drawable d = getResources().getDrawable(R.drawable.ic_action_github);
@@ -63,7 +64,7 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                     byte[] bitmapdata = stream.toByteArray();
 
-                    Users users = new Users(edtUser.getText().toString(), edtContactNo.getText().toString(),bitmapdata);
+                    Users users = new Users(edtUser.getText().toString(), edtContactNo.getText().toString(), area.getText().toString(), pincode.getText().toString(), email.getText().toString());
                     dbQueries.insertUser(users);
                     usersList = dbQueries.readUsers();
                     lvUserAdapter = new CustomAdapter(getApplicationContext(), usersList);
@@ -161,6 +162,11 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
 
         edtUser = (EditText) findViewById(R.id.edt_user);
         edtContactNo = (EditText) findViewById(R.id.edt_c_no);
+//       New
+        area = (EditText) findViewById(R.id.area_name);
+        pincode = (EditText) findViewById(R.id.pin_code);
+        email = (EditText) findViewById(R.id.email_id);
+
         btnSaveUser = (Button) findViewById(R.id.btn_save_user);
         btnExport = (Button) findViewById(R.id.btn_export);
         btnExportExclude = (Button) findViewById(R.id.btn_export_with_exclude);

@@ -36,7 +36,9 @@ public class DBQueries {
         ContentValues values = new ContentValues();
         values.put(DBConstants.CONTACT_PERSON_NAME, users.getContactPersonName());
         values.put(DBConstants.CONTACT_NO, users.getContactNumber());
-        values.put(DBConstants.CONTACT_PHOTO, users.getContactPhoto());
+        values.put(DBConstants.USER_AREA, users.getArea());
+        values.put(DBConstants.PIN_CODE, users.getPincode());
+        values.put(DBConstants.EMAIL_ID, users.getEmail());
         return database.insert(DBConstants.USER_TABLE, null, values) > -1;
     }
 
@@ -53,8 +55,10 @@ public class DBQueries {
                         String contactId = cursor.getString(cursor.getColumnIndex(DBConstants.CONTACT_ID));
                         String conPerson = cursor.getString(cursor.getColumnIndex(DBConstants.CONTACT_PERSON_NAME));
                         String conNo = cursor.getString(cursor.getColumnIndex(DBConstants.CONTACT_NO));
-                        byte[] conPhoto = cursor.getBlob(cursor.getColumnIndex(DBConstants.CONTACT_NO));
-                        Users users = new Users(contactId, conPerson, conNo, conPhoto);
+                        String conArea = cursor.getString(cursor.getColumnIndex(DBConstants.USER_AREA));
+                        String conPincode = cursor.getString(cursor.getColumnIndex(DBConstants.PIN_CODE));
+                        String conEmail = cursor.getString(cursor.getColumnIndex(DBConstants.EMAIL_ID));
+                        Users users = new Users(contactId, conPerson, conNo, conArea, conPincode ,conEmail);
                         list.add(users);
                     } while (cursor.moveToNext());
                 }

@@ -6,18 +6,25 @@ public class Users {
     private String contactPersonName;
     private String contactNumber;
     private byte[] contactPhoto;
+    private String area;
+    private String pincode;
+    private String email;
 
-    public Users(String contactPersonName, String contactNumber, byte[] contactPhoto) {
+    public Users(String contactPersonName, String contactNumber, String area , String pincode, String email) {
         this.contactPersonName = contactPersonName;
         this.contactNumber = contactNumber;
-        this.contactPhoto = contactPhoto;
+        this.area = area;
+        this.pincode = pincode;
+        this.email = email;
     }
 
-    public Users(String userId, String contactPersonName, String contactNumber, byte[] contactPhoto) {
+    public Users(String userId, String contactPersonName, String contactNumber, String area, String pincode, String email) {
         this.userId = userId;
         this.contactPersonName = contactPersonName;
         this.contactNumber = contactNumber;
-        this.contactPhoto = contactPhoto;
+        this.area = area;
+        this.pincode = pincode;
+        this.email = email;
     }
 
     public String getUserId() {
@@ -32,11 +39,15 @@ public class Users {
         return contactNumber;
     }
 
-    public byte[] getContactPhoto() {
-        return contactPhoto;
+    public String getArea(){
+        return area;
     }
 
-    public void setContactPhoto(byte[] contactPhoto) {
-        this.contactPhoto = contactPhoto;
+    public String getPincode(){
+        return pincode;
+    }
+
+    public String getEmail(){
+        return email;
     }
 }
