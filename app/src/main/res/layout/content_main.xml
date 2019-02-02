@@ -30,6 +30,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimary"
         android:text="@string/excel_2_sqlite"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:visibility="invisible" />
 
 </LinearLayout>

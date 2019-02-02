@@ -1,77 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@color/bgcolor"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".SQLite2ExcelActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="78dp" />
 
-        <EditText
-            android:id="@+id/edt_user"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/hint_enter_name"
-            android:inputType="text"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-
-        <EditText
-            android:id="@+id/edt_c_no"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/hint_enter_phone_number"
-            android:inputType="phone"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btn_save_user"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:text="@string/save"
-            android:textColor="@color/colorAccent" />
-
-        <Button
-            android:id="@+id/btn_export"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:text="@string/export"
-            android:textColor="@color/colorAccent" />
-
-        <Button
-            android:id="@+id/btn_export_with_exclude"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:text="@string/export_exclude"
-            android:textColor="@color/colorAccent" />
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/lv_users"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/edt_user"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:divider="#ffffff" />
-</LinearLayout>
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border"
+        android:hint="@string/hint_enter_name"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:paddingLeft="20dp"
+        android:textColor="@color/textcolor2"
+        android:textColorHint="@color/textcolor2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:hint="@string/area"
+        android:inputType="textPersonName"
+        android:padding="16dp"
+        android:paddingLeft="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor2"
+        android:textColorHint="@color/textcolor2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border"
+        android:baselineAligned="false"
+        android:ems="10"
+        android:hint="@string/pincode"
+        android:inputType="phone|number"
+        android:padding="16dp"
+        android:paddingLeft="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor2"
+        android:textColorHint="@color/textcolor2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+
+    <EditText
+        android:id="@+id/edt_c_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border"
+        android:hint="@string/hint_enter_phone_number"
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:paddingLeft="20dp"
+        android:textColor="@color/textcolor2"
+        android:textColorHint="@color/textcolor2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+
+    <Button
+        android:id="@+id/btn_save_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/save"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btn_export"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/export"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btn_export_with_exclude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/export_exclude"
+        android:textColor="@color/textcolor2"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:layout_editor_absoluteX="114dp" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:layout_editor_absoluteX="-14dp">
+
+        <ListView
+            android:id="@+id/lv_users"
+            android:layout_width="wrap_content"
+            android:layout_height="325dp"
+            android:divider="#ffffff"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="397dp">
+
+
+        </ListView>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="481dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="166dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="563dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="268dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="365dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="350dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp" />
+
+</android.support.constraint.ConstraintLayout>

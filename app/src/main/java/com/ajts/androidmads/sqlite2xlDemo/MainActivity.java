@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.github){
-            String url = "https://github.com/androidmads/SQLite2XL/";
+            String url = "https://github.com/Arun-Josh/";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
