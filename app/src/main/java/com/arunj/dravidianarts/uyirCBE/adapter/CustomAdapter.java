@@ -1,20 +1,16 @@
-package com.ajts.androidmads.sqlite2xlDemo.adapter;
+package com.arunj.dravidianarts.uyirCBE.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ajts.androidmads.sqlite2xlDemo.R;
-import com.ajts.androidmads.sqlite2xlDemo.model.Users;
+import com.arunj.dravidianarts.uyirCBE.R;
+import com.arunj.dravidianarts.uyirCBE.model.Users;
 
 import java.util.ArrayList;
 import java.util.List;

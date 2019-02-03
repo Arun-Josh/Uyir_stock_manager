@@ -1,4 +1,4 @@
-package com.ajts.androidmads.sqlite2xlDemo;
+package com.arunj.dravidianarts.uyirCBE;
 
 import android.Manifest;
 import android.content.Intent;

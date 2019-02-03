@@ -1,4 +1,4 @@
-package com.ajts.androidmads.sqlite2xlDemo.db;
+package com.arunj.dravidianarts.uyirCBE.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.ajts.androidmads.sqlite2xlDemo.model.Users;
+import com.arunj.dravidianarts.uyirCBE.model.Users;
 
 import java.util.ArrayList;
 

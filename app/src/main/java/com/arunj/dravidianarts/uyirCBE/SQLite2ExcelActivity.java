@@ -1,4 +1,4 @@
-package com.ajts.androidmads.sqlite2xlDemo;
+package com.arunj.dravidianarts.uyirCBE;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -13,12 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.ajts.androidmads.library.SQLiteToExcel;
-import com.ajts.androidmads.sqlite2xlDemo.adapter.CustomAdapter;
-import com.ajts.androidmads.sqlite2xlDemo.db.DBHelper;
-import com.ajts.androidmads.sqlite2xlDemo.db.DBQueries;
-import com.ajts.androidmads.sqlite2xlDemo.model.Users;
-import com.ajts.androidmads.sqlite2xlDemo.util.Utils;
+import com.arunj.dravidianarts.library.SQLiteToExcel;
+import com.arunj.dravidianarts.uyirCBE.adapter.CustomAdapter;
+import com.arunj.dravidianarts.uyirCBE.db.DBHelper;
+import com.arunj.dravidianarts.uyirCBE.db.DBQueries;
+import com.arunj.dravidianarts.uyirCBE.model.Users;
+import com.arunj.dravidianarts.uyirCBE.util.Utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -71,8 +71,10 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
                     lvUsers.setAdapter(lvUserAdapter);
                     dbQueries.close();
                     Utils.showSnackBar(view, "Successfully Inserted");
+                    btnExport.performClick();
                 }
             }
+
         });
 
         btnExport.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +90,13 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
 
                     @Override
                     public void onCompleted(String filePath) {
-                        Utils.showSnackBar(view, "Successfully Exported");
+//                        try{
+//                            Thread.sleep(500);
+//                        }
+//                        catch (Exception e){
+//                            Utils.showSnackBar(view,"Error");
+//                        }
+//                        Utils.showSnackBar(view, "Successfully Exported");
                     }
 
                     @Override

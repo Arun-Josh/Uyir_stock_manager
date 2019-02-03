@@ -1,4 +1,4 @@
-package com.ajts.androidmads.sqlite2xlDemo.model;
+package com.arunj.dravidianarts.uyirCBE.model;
 
 public class Users {
 

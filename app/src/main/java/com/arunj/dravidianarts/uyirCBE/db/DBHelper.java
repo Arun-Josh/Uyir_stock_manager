@@ -1,4 +1,4 @@
-package com.ajts.androidmads.sqlite2xlDemo.db;
+package com.arunj.dravidianarts.uyirCBE.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

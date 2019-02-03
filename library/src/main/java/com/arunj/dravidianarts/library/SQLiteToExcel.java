@@ -1,4 +1,4 @@
-package com.ajts.androidmads.library;
+package com.arunj.dravidianarts.library;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -1,4 +1,4 @@
-package com.ajts.androidmads.sqlite2xlDemo;
+package com.arunj.dravidianarts.uyirCBE;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.ajts.androidmads.library.ExcelToSQLite;
-import com.ajts.androidmads.sqlite2xlDemo.db.DBHelper;
-import com.ajts.androidmads.sqlite2xlDemo.db.DBQueries;
-import com.ajts.androidmads.sqlite2xlDemo.util.Utils;
+import com.arunj.dravidianarts.library.ExcelToSQLite;
+import com.arunj.dravidianarts.uyirCBE.db.DBHelper;
+import com.arunj.dravidianarts.uyirCBE.db.DBQueries;
+import com.arunj.dravidianarts.uyirCBE.util.Utils;
 
 import java.io.File;
 
