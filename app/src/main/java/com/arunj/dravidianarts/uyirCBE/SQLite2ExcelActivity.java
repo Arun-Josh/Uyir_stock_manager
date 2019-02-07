@@ -1,10 +1,12 @@
 package com.arunj.dravidianarts.uyirCBE;
 
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.arunj.dravidianarts.library.SQLiteToExcel;
 import com.arunj.dravidianarts.uyirCBE.adapter.CustomAdapter;
@@ -65,12 +68,26 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
                     byte[] bitmapdata = stream.toByteArray();
 
                     Users users = new Users(edtUser.getText().toString(), edtContactNo.getText().toString(), area.getText().toString(), pincode.getText().toString(), email.getText().toString());
-                    dbQueries.insertUser(users);
+                    if(dbQueries.insertUser(users)){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SQLite2ExcelActivity.this);
+                        builder.setTitle("Successfully Registered !");
+                        builder.setMessage("We welcome your presence");
+                        builder.setCancelable(true);
+                        builder.show();
+                    }
+                    else{
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SQLite2ExcelActivity.this);
+                        builder.setTitle("Number already registered !");
+                        builder.setMessage("Use a different number");
+                        builder.setCancelable(true);
+                        builder.show();
+//                        Utils.showSnackBar(view, "Number already registered !");
+                    }
                     usersList = dbQueries.readUsers();
                     lvUserAdapter = new CustomAdapter(getApplicationContext(), usersList);
                     lvUsers.setAdapter(lvUserAdapter);
                     dbQueries.close();
-                    Utils.showSnackBar(view, "Successfully Inserted");
+
                     btnExport.performClick();
                 }
             }
