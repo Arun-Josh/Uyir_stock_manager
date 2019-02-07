@@ -1,10 +1,14 @@
 package com.arunj.dravidianarts.uyirCBE.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Users {
 
     private String userId;
     private String contactPersonName;
     private String contactNumber;
+    private String date;
     private byte[] contactPhoto;
     private String area;
     private String pincode;
@@ -49,5 +53,11 @@ public class Users {
 
     public String getEmail(){
         return email;
+    }
+
+    public String getDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-YYYY");
+        String date = sdf.format(new Date());
+        return date;
     }
 }

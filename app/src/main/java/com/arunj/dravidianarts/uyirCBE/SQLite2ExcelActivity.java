@@ -58,7 +58,7 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validate(edtUser) && validate(edtContactNo) && validate(area) && validate(pincode)) {
+                if (validate(edtUser) && validatePhonenum(edtContactNo) &&  validate(pincode) && validate(area) ) {
                     dbQueries.open();
 
                     Drawable d = getResources().getDrawable(R.drawable.ic_action_github);
@@ -176,6 +176,23 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
             editText.requestFocus();
         }
         return editText.getText().toString().length() > 0;
+    }
+
+    boolean validatePhonenum(EditText editText){
+        if (editText.getText().toString().length() == 0) {
+            editText.setError("Field Required");
+            editText.requestFocus();
+            return false;
+        }
+        if(editText.getText().toString().length()<10){
+            AlertDialog.Builder builder = new AlertDialog.Builder(SQLite2ExcelActivity.this);
+            builder.setTitle("Mobile Number Wrong !");
+            builder.setMessage("Check the number entered");
+            builder.setCancelable(true);
+            builder.show();
+            return false;
+        }
+        return true;
     }
 
     void initViews() {

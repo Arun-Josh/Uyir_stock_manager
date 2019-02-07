@@ -39,6 +39,7 @@ public class DBQueries {
         values.put(DBConstants.USER_AREA, users.getArea());
         values.put(DBConstants.PIN_CODE, users.getPincode());
         values.put(DBConstants.EMAIL_ID, users.getEmail());
+        values.put(DBConstants.DATE,users.getDate());
         return database.insert(DBConstants.USER_TABLE, null, values) > -1;
     }
 
