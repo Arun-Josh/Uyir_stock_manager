@@ -1,14 +1,19 @@
 <resources>
-    <string name="app_name">Uyir CBE</string>
+    <string name="app_name">Uyir Coimbatore</string>
     <string name="save">Save</string>
     <string name="hint_enter_name">Enter Name</string>
-    <string name="area">Enter Area name</string>
-    <string name="pincode">Enter Pin Code</string>
-    <string name="email">Email ID (Optional)</string>
+    <string name="date">Date</string>
+    <string name="product">Product</string>
+    <string name="code_no">Code No</string>
+    <string name="batch">Batch</string>
+    <string name="total">Total</string>
+<!--    <string name="area">Enter Area name</string>-->
+<!--    <string name="pincode">Enter Pin Code</string>-->
+<!--    <string name="email">Email ID (Optional)</string>-->
     <string name="export">Export</string>
     <string name="export_exclude">Export with Exclude</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="sqlite_2_excel">New Registration</string>
+    <string name="sqlite_2_excel">Enter Stock</string>
     <string name="excel_2_sqlite">Excel 2 SQLite</string>
     <string name="import_">Import</string>
     <string name="pick">Pick</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.arunj.dravidianarts.uyirCBE">
+    package="com.arunj.dravidianarts.uyirCBEStocks">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name="com.arunj.dravidianarts.uyirCBE.util.SplashActivity" android:theme="@style/SplashTheme">
+        <activity android:name="com.arunj.dravidianarts.uyirCBEStocks.util.SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +21,7 @@
 
         </activity>
 
-        <activity android:name="com.arunj.dravidianarts.uyirCBE.MainActivity">
+        <activity android:name="com.arunj.dravidianarts.uyirCBEStocks.MainActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -29,11 +29,11 @@
             <!--</intent-filter>-->
         </activity>
         <activity
-            android:name="com.arunj.dravidianarts.uyirCBE.SQLite2ExcelActivity"
+            android:name="com.arunj.dravidianarts.uyirCBEStocks.SQLite2ExcelActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.arunj.dravidianarts.uyirCBE.Excel2SQLiteActivity"
+            android:name="com.arunj.dravidianarts.uyirCBEStocks.Excel2SQLiteActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme"/>
     </application>

@@ -1,4 +1,4 @@
-package com.arunj.dravidianarts.uyirCBE;
+package com.arunj.dravidianarts.uyirCBEStocks;
 
 import android.Manifest;
 import android.content.Intent;
@@ -69,4 +69,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }

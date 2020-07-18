@@ -1,4 +1,4 @@
-package com.arunj.dravidianarts.uyirCBE.db;
+package com.arunj.dravidianarts.uyirCBEStocks.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,12 +17,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(DBConstants.CREATE_USER_TABLE);
+        db.execSQL(DBConstants.CREATE_STOCK_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + DBConstants.USER_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + DBConstants.STOCK_TABLE);
     }
 
 }

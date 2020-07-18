@@ -1,4 +1,4 @@
-package com.arunj.dravidianarts.uyirCBE;
+package com.arunj.dravidianarts.uyirCBEStocks;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.arunj.dravidianarts.library.ExcelToSQLite;
-import com.arunj.dravidianarts.uyirCBE.db.DBHelper;
-import com.arunj.dravidianarts.uyirCBE.db.DBQueries;
-import com.arunj.dravidianarts.uyirCBE.util.Utils;
+import com.arunj.dravidianarts.uyirCBEStocks.db.DBHelper;
+import com.arunj.dravidianarts.uyirCBEStocks.db.DBQueries;
+import com.arunj.dravidianarts.uyirCBEStocks.util.Utils;
 
 import java.io.File;
 

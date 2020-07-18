@@ -1,6 +1,5 @@
-package com.arunj.dravidianarts.uyirCBE;
+package com.arunj.dravidianarts.uyirCBEStocks;
 
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -14,14 +13,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.arunj.dravidianarts.library.SQLiteToExcel;
-import com.arunj.dravidianarts.uyirCBE.adapter.CustomAdapter;
-import com.arunj.dravidianarts.uyirCBE.db.DBHelper;
-import com.arunj.dravidianarts.uyirCBE.db.DBQueries;
-import com.arunj.dravidianarts.uyirCBE.model.Users;
-import com.arunj.dravidianarts.uyirCBE.util.Utils;
+import com.arunj.dravidianarts.uyirCBEStocks.adapter.CustomAdapter;
+import com.arunj.dravidianarts.uyirCBEStocks.db.DBHelper;
+import com.arunj.dravidianarts.uyirCBEStocks.db.DBQueries;
+import com.arunj.dravidianarts.uyirCBEStocks.model.Users;
+import com.arunj.dravidianarts.uyirCBEStocks.util.Utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,7 +30,7 @@ import java.util.List;
 public class SQLite2ExcelActivity extends AppCompatActivity {
 
 //    EditText edtUser, edtContactNo ;
-    EditText edtUser, edtContactNo, pincode, area, email;
+    EditText date, name, product, codeNo, batch, total;
     Button btnSaveUser, btnExport, btnExportExclude;
     ListView lvUsers;
     CustomAdapter lvUserAdapter;
@@ -58,8 +56,9 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validate(edtUser) && validatePhonenum(edtContactNo) &&  validate(pincode) && validate(area) ) {
-                    dbQueries.open();
+//                if (validate(name) && validate(product) &&  validate(codeNo) && validate(batch) && validate(total) ) {
+                if (validate(name)){
+                dbQueries.open();
 
                     Drawable d = getResources().getDrawable(R.drawable.ic_action_github);
                     Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
@@ -67,18 +66,27 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                     byte[] bitmapdata = stream.toByteArray();
 
-                    Users users = new Users(edtUser.getText().toString(), edtContactNo.getText().toString(), area.getText().toString(), pincode.getText().toString(), email.getText().toString());
+                    Users users = new Users(date.getText().toString(), name.getText().toString(), product.getText().toString(), codeNo.getText().toString(), batch.getText().toString(), total.getText().toString());
                     if(dbQueries.insertUser(users)){
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SQLite2ExcelActivity.this);
-                        builder.setTitle("Successfully Registered !");
-                        builder.setMessage("We welcome your presence");
-                        builder.setCancelable(true);
-                        builder.show();
+//                        finish();
+//                        new MainActivity().success();
+//                         try {
+                             AlertDialog.Builder builder = new AlertDialog.Builder(SQLite2ExcelActivity.this);
+                             builder.setTitle("Success !");
+                             builder.setMessage("Stock added successfully");
+                             builder.setCancelable(true);
+                             builder.show();
+//                             Thread.sleep(1000);
+//                             finish();
+//                        }catch (Exception e){
+//
+//                        }
+
                     }
                     else{
                         AlertDialog.Builder builder = new AlertDialog.Builder(SQLite2ExcelActivity.this);
-                        builder.setTitle("Number already registered !");
-                        builder.setMessage("Use a different number");
+                        builder.setTitle("Error !");
+                        builder.setMessage("something went wrong");
                         builder.setCancelable(true);
                         builder.show();
 //                        Utils.showSnackBar(view, "Number already registered !");
@@ -202,12 +210,18 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
         dbHelper = new DBHelper(getApplicationContext());
         dbQueries = new DBQueries(getApplicationContext());
 
-        edtUser = (EditText) findViewById(R.id.edt_user);
-        edtContactNo = (EditText) findViewById(R.id.edt_c_no);
+//        edtUser = (EditText) findViewById(R.id.edt_user);
+//        edtContactNo = (EditText) findViewById(R.id.edt_c_no);
 //       New
-        area = (EditText) findViewById(R.id.area_name);
-        pincode = (EditText) findViewById(R.id.pin_code);
-        email = (EditText) findViewById(R.id.email_id);
+//        area = (EditText) findViewById(R.id.area_name);
+//        pincode = (EditText) findViewById(R.id.pin_code);
+//        email = (EditText) findViewById(R.id.email_id);
+        date = (EditText) findViewById(R.id.date);
+        name = (EditText) findViewById(R.id.name);
+        product = (EditText) findViewById(R.id.product);
+        codeNo = (EditText) findViewById(R.id.codeNo);
+        batch = (EditText) findViewById(R.id.batch);
+        total = (EditText) findViewById(R.id.total);
 
         btnSaveUser = (Button) findViewById(R.id.btn_save_user);
         btnExport = (Button) findViewById(R.id.btn_export);

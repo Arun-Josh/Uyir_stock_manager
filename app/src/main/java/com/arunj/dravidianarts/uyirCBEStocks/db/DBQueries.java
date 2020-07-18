@@ -1,4 +1,4 @@
-package com.arunj.dravidianarts.uyirCBE.db;
+package com.arunj.dravidianarts.uyirCBEStocks.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.arunj.dravidianarts.uyirCBE.model.Users;
+import com.arunj.dravidianarts.uyirCBEStocks.model.Users;
 
 import java.util.ArrayList;
 
@@ -34,13 +34,13 @@ public class DBQueries {
     // Users
     public boolean insertUser(Users users) {
         ContentValues values = new ContentValues();
-        values.put(DBConstants.CONTACT_PERSON_NAME, users.getContactPersonName());
-        values.put(DBConstants.CONTACT_NO, users.getContactNumber());
-        values.put(DBConstants.USER_AREA, users.getArea());
-        values.put(DBConstants.PIN_CODE, users.getPincode());
-        values.put(DBConstants.EMAIL_ID, users.getEmail());
-        values.put(DBConstants.DATE,users.getDate());
-        return database.insert(DBConstants.USER_TABLE, null, values) > -1;
+        values.put(DBConstants.STOCK_DATE, users.getDate());
+        values.put(DBConstants.STOCK_NAME, users.getName());
+        values.put(DBConstants.STOCK_PRODUCT, users.getProduct());
+        values.put(DBConstants.STOCK_CODE_NO, users.getCodeNo());
+        values.put(DBConstants.STOCK_BATCH, users.getBatch());
+        values.put(DBConstants.STOCK_TOTAL,users.getTotal());
+        return database.insert(DBConstants.STOCK_TABLE, null, values) > -1;
     }
 
     public ArrayList<Users> readUsers() {
@@ -53,13 +53,13 @@ public class DBQueries {
             if (cursor.getCount() > 0) {
                 if (cursor.moveToFirst()) {
                     do {
-                        String contactId = cursor.getString(cursor.getColumnIndex(DBConstants.CONTACT_ID));
-                        String conPerson = cursor.getString(cursor.getColumnIndex(DBConstants.CONTACT_PERSON_NAME));
-                        String conNo = cursor.getString(cursor.getColumnIndex(DBConstants.CONTACT_NO));
-                        String conArea = cursor.getString(cursor.getColumnIndex(DBConstants.USER_AREA));
-                        String conPincode = cursor.getString(cursor.getColumnIndex(DBConstants.PIN_CODE));
-                        String conEmail = cursor.getString(cursor.getColumnIndex(DBConstants.EMAIL_ID));
-                        Users users = new Users(contactId, conPerson, conNo, conArea, conPincode ,conEmail);
+                        String date = cursor.getString(cursor.getColumnIndex(DBConstants.STOCK_DATE));
+                        String name = cursor.getString(cursor.getColumnIndex(DBConstants.STOCK_NAME));
+                        String product = cursor.getString(cursor.getColumnIndex(DBConstants.STOCK_PRODUCT));
+                        String codeNo = cursor.getString(cursor.getColumnIndex(DBConstants.STOCK_CODE_NO));
+                        String batch = cursor.getString(cursor.getColumnIndex(DBConstants.STOCK_BATCH));
+                        String total = cursor.getString(cursor.getColumnIndex(DBConstants.STOCK_TOTAL));
+                        Users users = new Users(date, name, product, codeNo, batch, total);
                         list.add(users);
                     } while (cursor.moveToNext());
                 }

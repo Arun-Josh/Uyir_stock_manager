@@ -1,4 +1,4 @@
-package com.arunj.dravidianarts.uyirCBE.util;
+package com.arunj.dravidianarts.uyirCBEStocks.util;
 
 import android.support.design.widget.Snackbar;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.arunj.dravidianarts.uyirCBE.adapter;
+package com.arunj.dravidianarts.uyirCBEStocks.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.arunj.dravidianarts.uyirCBE.R;
-import com.arunj.dravidianarts.uyirCBE.model.Users;
+import com.arunj.dravidianarts.uyirCBEStocks.R;
+import com.arunj.dravidianarts.uyirCBEStocks.model.Users;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +56,8 @@ public class CustomAdapter extends BaseAdapter {
         TextView your_first_text_view = (TextView) rowView.findViewById(R.id.listview_firsttextview);
         TextView your_second_text_view = (TextView) rowView.findViewById(R.id.listview_secondtextview);
 
-        your_first_text_view.setText(usersList.get(position).getContactPersonName());
-        your_second_text_view.setText(usersList.get(position).getContactNumber());
+        your_first_text_view.setText(usersList.get(position).getName());
+        your_second_text_view.setText(usersList.get(position).getBatch());
 
         return rowView;
     }
