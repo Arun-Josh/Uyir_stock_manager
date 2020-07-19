@@ -21,7 +21,7 @@ public class Excel2SQLiteActivity extends AppCompatActivity {
     Button btnImport;
     DBHelper dbHelper;
     DBQueries dbQueries;
-    String directory_path = Environment.getExternalStorageDirectory().getPath() + "/Backup/users.xls";
+    String directory_path = Environment.getExternalStorageDirectory().getPath() + "/Backup/stocks.xls";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

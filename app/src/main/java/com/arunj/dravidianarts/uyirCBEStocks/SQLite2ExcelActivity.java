@@ -56,8 +56,8 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (validate(name) && validate(product) &&  validate(codeNo) && validate(batch) && validate(total) ) {
-                if (validate(name)){
+                if (validate(name) && validate(product) &&  validate(codeNo) && validate(batch) && validate(total) ) {
+//                if (validate(name)){
                 dbQueries.open();
 
                     Drawable d = getResources().getDrawable(R.drawable.ic_action_github);
@@ -107,7 +107,7 @@ public class SQLite2ExcelActivity extends AppCompatActivity {
             public void onClick(final View view) {
                 // Export SQLite DB as EXCEL FILE
                 sqliteToExcel = new SQLiteToExcel(getApplicationContext(), DBHelper.DB_NAME, directory_path);
-                sqliteToExcel.exportAllTables("users.xls", new SQLiteToExcel.ExportListener() {
+                sqliteToExcel.exportAllTables("stocks.xls", new SQLiteToExcel.ExportListener() {
                     @Override
                     public void onStart() {
 
